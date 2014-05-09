@@ -2,10 +2,15 @@
   "name": "favorites",
   "version": "0.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "app.js",
   "author": "Sarah Ann Gay",
   "dependencies": {
     "express": "4.1.2",
-    "mongoose": "3.8.9"
+    "mongoose": "3.8.9",
+    "body-parser": "^1.0.2",
+    "method-override": "^1.0.0"
+  },
+  "engines": {
+    "node": "0.10.x"
   }
 }
