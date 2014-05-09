@@ -9,4 +9,8 @@
   app.use(require('body-parser')());              // pull information from html in POST
   app.use(require('method-override')());            // simulate DELETE and PUT
 
-  app.get('/', res.send({hello: 'world'}));
+  app.listen(4000);
+
+  app.get('/', function (req, res) {
+    res.send({hello: 'world'})
+  });
