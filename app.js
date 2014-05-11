@@ -17,7 +17,15 @@ app.use(require('method-override')());
 app.get('/', function (req, res) {
   res.send('OK', 200);
 })
+
+var port = Number(process.env.PORT || 4000);
+app.listen(port, function() {
+  console.log("Listening on " + port);
+});
+
 app.get('/list', controllers.show);
 app.post('/', validator, controllers.add);
 app.delete('/', controllers.remove);
 app.put('/', validator, controllers.edit);
+
+
