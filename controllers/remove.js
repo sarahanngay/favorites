@@ -8,7 +8,7 @@ function remove (req, res, next) {
 
   // make sure an id is given
   if (!id) {
-    return es.send('id is missing', 400);
+    return res.send('id is missing', 400);
   }
 
   // find by id and remove location
