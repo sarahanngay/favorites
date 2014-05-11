@@ -1,4 +1,4 @@
-var AddressModel = require(process.cwd() + '/models/address');
+var AddressModel = require(__dirname + '../../../models/address')
 
 module.exports = remove;
 

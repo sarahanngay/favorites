@@ -165,98 +165,6 @@ header {
 	margin:4px 0 24px 0
 }
 
-/*===== menu =====*/
-nav {
-	padding:18px 0 0 0;
-	float:right;
-	display:block;
-	z-index:99;
-}
-.sf-menu, .sf-menu * {
-	margin:			0;
-	padding:		0;
-	list-style:		none;
-}
-.sf-menu {
-	position:relative;
-}
-.sf-menu > li {
-	margin-left:7px;
-	float:left;
-	position:relative;
-	-webkit-transition: all 0.3s ease;
-	-moz-transition: all 0.3s ease;
-	-o-transition: all 0.3s ease;
-	transition: all 0.3s ease;
-	border-radius:4px;
-	background:url(../images/point.png)
-}
-
-.sf-menu  a {
-	color:#343434;
-    font-size:14px;
-    line-height:20px;
-	text-decoration:none;
-}
-
-.sf-menu > li > a {
-	display:block;
-	padding:12px 14px;
-}
-
-.sf-menu ul {
-	position:		absolute;
-	top:			-999em;
-	width:			160px;
-	display:none;
-	background:url(../images/bg-body.gif);
-	padding:11px 14px 14px;
-	border-radius:8px;
-	-moz-border-radius:8px;
-	-webkit-border-radius:8px;
-    box-shadow:inset 0 1px 3px #c5c2a9;
-	-moz-box-shadow: inset 0 1px 3px #c5c2a9;
-	-webkit-box-shadow: inset 0 1px 3px #c5c2a9;
-
-}
-.sf-menu > li.sfHover , .sf-menu > li:hover, .sf-menu li.active {
-	background:url(../images/tail-item.gif);
-	   box-shadow:inset 0 1px 3px #c5c2a9;
-	-moz-box-shadow: inset 0 1px 3px #c5c2a9;
-	-webkit-box-shadow: inset 0 1px 3px #c5c2a9;
-	
-}
-
-.sf-menu > li.sfHover > a, .sf-menu > li > a:hover, .sf-menu li.active a {
-	color:#d53827;
-
-	
-}
-
-
-.sf-menu li li.sfHover > a, .sf-menu li li a:hover, .sf-menu li li a.active {
-	color:#d53827;
-}
-.sf-menu li:hover ul, .sf-menu li.sfHover ul {
-	left:			0px;
-	top:			47px; /* match top ul list item height */
-	z-index:		99;
-}
-ul.sf-menu li:hover li ul, ul.sf-menu li.sfHover li ul {
-	top:			-999em;
-}
-ul.sf-menu li li:hover ul, ul.sf-menu li li.sfHover ul {
-	left:			256px; /* match ul width */
-	top:			27px;
-}
-ul.sf-menu li li:hover li ul, ul.sf-menu li li.sfHover li ul {
-	top:			-999em;
-}
-ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul {
-	left:			10em; /* match ul width */
-	top:			0px;
-}
-
 /*===== content =====*/
 
 #content {
@@ -370,16 +278,6 @@ background:#fff;
 	color:#d53827;
 }
 .list-1 li a:hover{color:#343434}
-
-.list-teachers{}
-.list-teachers li{padding-bottom:25px}
-.list-teachers li figure{float:left;margin-right:30px}
-
-.list-recipes{}
-.list-recipes li figure{float:left;margin-right:30px}
-.list-recipes li h4{padding-top:14px}
-.list-recipes li{padding-bottom:30px}
-.list-recipes.extra h4{padding-top:10px}
 
 .privacy {
 	width:750px;

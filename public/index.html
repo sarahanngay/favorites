@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="favorites">
 <head>
 <title>Locations</title>
 <meta charset="utf-8">
@@ -8,8 +8,23 @@
 <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
 <link rel="stylesheet" href="css/grid.css" type="text/css" media="screen">
 
-<h3 align="center">Favorites</h3>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+<script src="core.js"></script>
 
+<h3 align="center">Favorites</h3>
+<body ng-controller="mainController">
+	<div class="container">
+		<div id="getListForm" class="row">
+			<div class="form-group">
+			 <input type="text" class="form-control input-lg text-center" placeholder="HerpDerp" ng-model="formData.text"/>
+			</div>
+			<button type="submit" class="btn btn-primary btn-lg" ng-click="logText()">Add</button>
+			<td>{{list}}</td>
+		</div>
+	</div>
+</body>
 </head>
+</html>
 
 

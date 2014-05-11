@@ -1,5 +1,5 @@
 var mongoose     = require('mongoose')
-  , AddressModel = require(process.cwd() + '/models/address')
+  , AddressModel = require(__dirname + '../../../models/address')
   , async        = require('async')
   , geocoder     = require('geocoder');
 

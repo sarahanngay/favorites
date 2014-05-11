@@ -12,7 +12,8 @@
     "joi": "3.1.0",
     "async": "0.8.0",
     "geocoder": "0.2.0",
-    "logfmt": "1.1.2"
+    "logfmt": "1.1.2",
+    "lodash": "2.4.1"
   },
   "engines": {
     "node": "0.10.x"
