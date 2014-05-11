@@ -9,7 +9,15 @@ module.exports = add;
 function add (req, res, next) {
 
   // create the waterfall steps
-  var wtrfll = [check_duplicate, geo_addr, save_location];
+  var wtrfll = [check_duplicate, geo_addr];
+
+  // if we're editing, push edit into the waterfall,
+  // otherwise, push add
+  if (req.method === 'PUT') {
+    wtrfll.push(edit_location);
+  } else {
+    wtrfll.push(save_location);
+  }
 
   // create the address object for save
   var addr_obj = {
@@ -119,4 +127,29 @@ function add (req, res, next) {
       });
     }
   }
+
+  function edit_location (previous, callback) {
+    if (previous.error) {
+      return callback(null, previous);
+    } else {
+      // create a new address object
+      var Address = new AddressModel(addr_obj);
+
+      // save the address
+      AddressModel.findByIdAndUpdate(req.body.id, addr_obj, function (error, results) {
+        // if there was an error, return the error message
+        if (error) {
+          previous.message = error;
+          previous.error = true;
+          return callback(null, previous);
+        } else {
+          // fill out the return value
+          previous.error = false;
+          previous.message = 'Location updated';
+          return callback(null, previous);          
+        }
+      });
+    }
+  }
+
 }

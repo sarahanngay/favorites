@@ -1,6 +1,6 @@
 module.exports = {
   show   : require('./show'),
   add    : require('./add'),
-  edit   : require('./edit'),
+  edit   : require('./add'),
   remove : require('./remove')
 };
