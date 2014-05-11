@@ -9,7 +9,7 @@ var db = mongoose.connection;
 
 mongoose.connect('mongodb://sarahbobber:dumble11@ds031627.mongolab.com:31627/favorites');
 
-app.use(express.static(__dirname + '/public/index'));
+app.use(express.static(__dirname + '/public'));
 app.use(require('body-parser')());
 app.use(require('method-override')());
 

@@ -2,7 +2,7 @@
   "name": "favorites",
   "version": "0.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.html",
   "author": "Sarah Ann Gay",
   "dependencies": {
     "express": "4.1.2",
