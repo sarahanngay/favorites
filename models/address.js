@@ -8,7 +8,9 @@ var mongoose = require('mongoose')
     state: {type: String, default: ''},
     zip: {type: String, default: ''},
     country: {type: String, default: ''},
-    name: {type: String, default: ''}
+    name: {type: String, default: ''},
+    latitude: {type: String, default: null},
+    longitude: {type: String, default: null}
   });
 
 module.exports = mongoose.model('Address', AddressSchema);

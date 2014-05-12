@@ -4,7 +4,7 @@ module.exports = remove;
 
 function remove (req, res, next) {
 
-  var id = req.body.id;
+  var id = req.params.id;
 
   // make sure an id is given
   if (!id) {

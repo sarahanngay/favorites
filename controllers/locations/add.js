@@ -27,8 +27,6 @@ function add (req, res, next) {
     zip: req.body.zip,
     country: req.body.country,
     name: req.body.name,
-    latitude: null,
-    longitude: null
   };
 
   // start the process of adding a location
@@ -82,21 +80,25 @@ function add (req, res, next) {
           var obj = result.results[0]
             , lat = null
             , lng = null;
-
+            
           // if we have an object, grab the lat/long
           if (obj) {
             obj = obj.geometry;
             lat = obj.location.lat;
             lng = obj.location.lng;
+
+            // set the lat/long
+            addr_obj.latitude = lat;
+            addr_obj.longitude = lng;
+
+            // fill out the return value
+            previous.error = false;
+            previous.message = null;
+
+          } else {
+            previous.message = "Invalid address";
+            previous.error = true;
           }
-
-          // set the lat/long
-          addr_obj.latitude = lat;
-          addr_obj.longitude = lng;
-
-          // fill out the return value
-          previous.error = false;
-          previous.message = null;
 
           return callback(null, previous);
         }
@@ -108,6 +110,7 @@ function add (req, res, next) {
     if (previous.error) {
       return callback(null, previous);
     } else {
+
       // create a new address object
       var Address = new AddressModel(addr_obj);
 
@@ -132,11 +135,12 @@ function add (req, res, next) {
     if (previous.error) {
       return callback(null, previous);
     } else {
+      console.log(addr_obj)
       // create a new address object
       var Address = new AddressModel(addr_obj);
 
       // save the address
-      AddressModel.findByIdAndUpdate(req.body.id, addr_obj, function (error, results) {
+      AddressModel.findByIdAndUpdate(req.body.id, req.body, function (error, results) {
         // if there was an error, return the error message
         if (error) {
           previous.message = error;

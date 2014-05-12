@@ -24,8 +24,8 @@ app.listen(port, function() {
 
 app.get('/list', locations.show);
 app.get('/location/:id', locations.show);
+app.delete('/location/:id', locations.remove);
 app.post('/', validator, locations.add);
-app.delete('/', locations.remove);
-app.put('/', validator, locations.edit);
+app.put('/', locations.edit);
 
 
