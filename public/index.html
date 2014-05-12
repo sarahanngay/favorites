@@ -4,25 +4,42 @@
 <title>Locations</title>
 <meta charset="utf-8">
 <!--css-->
-<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
 <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
-<link rel="stylesheet" href="css/grid.css" type="text/css" media="screen">
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
 <script src="core.js"></script>
 
-<h3 align="center">Favorites</h3>
+<h3 align="center">Favorite Locations</h3>
+<div class="wrapper">
+	<button class="add-btn" type="submit" align="center">Add a new location</button>
+</div>
 <body ng-controller="mainController">
-	<div class="container">
-		<div id="getListForm" class="row">
-			<div class="form-group">
-			 <input type="text" class="form-control input-lg text-center" placeholder="HerpDerp" ng-model="formData.text"/>
-			</div>
-			<button type="submit" class="btn btn-primary btn-lg" ng-click="logText()">Add</button>
-			<td>{{list}}</td>
-		</div>
-	</div>
+	<ul class="list-dropcap1">
+		<li ng-repeat="location in list">
+			<input type="hidden" id="loc_id" value="{{location._id}}"/>
+			<label>Name:</label>
+			<input type="text" value="{{location.name}}"/>
+			<br/>
+			<label>Line1:</label>
+			<input type="text" value="{{location.line[0]}}"/>
+			<br/>
+			<label>Line2:</label>
+			<input type="text" value="{{location.line[1]}}"/>
+			<br/>
+			<label>City:</label>
+			<input type="text" value="{{location.city}}"/>
+			<br/>
+			<label>State:</label>
+			<input type="text" value="{{location.state}}"/>
+			<br/>
+			<label>Zip:</label>
+			<input type="text" value="{{location.zip}}"/>
+			<br/>
+			<button class="btn" type="submit">edit</button>
+			<button class="btn" type="submit">delete</button>
+		</li>
+	</ul>
 </body>
 </head>
 </html>

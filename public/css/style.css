@@ -6,6 +6,20 @@ mark, rp, rt, ruby, summary, time {
 	display: inline
 }
 /* Global properties ======================================================== */
+
+label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 75px;
+    text-align: left;
+}
+input {
+  display: inline-block;
+  width: 250px;
+  float: left;
+}
+
 body {	
 	font-family: 'PT Serif Caption', serif;
 	font-size:14px;
@@ -279,6 +293,16 @@ background:#fff;
 }
 .list-1 li a:hover{color:#343434}
 
+.list-teachers{}
+.list-teachers li{padding-bottom:25px}
+.list-teachers li figure{float:left;margin-right:30px}
+
+.list-recipes{}
+.list-recipes li figure{float:left;margin-right:30px}
+.list-recipes li h4{padding-top:14px}
+.list-recipes li{padding-bottom:30px}
+.list-recipes.extra h4{padding-top:10px}
+
 .privacy {
 	width:750px;
 	padding:0 0 0 0
@@ -293,6 +317,25 @@ background:#fff;
 color:#343434}
 
 /*----- btns -----*/
+.wrapper {
+    text-align: center;
+}
+.add-btn {
+	display:inline-block;
+	color:#fff;
+	padding:8px 16px;
+	background:#db3222;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+    box-shadow:0 1px 2px #c5c2a9;
+	-moz-box-shadow: 0 1px 2px #c5c2a9;
+	-webkit-box-shadow:0 1px 2px #c5c2a9;
+	vertical-align: center;
+	width: 300px;  
+	height: 50px;
+}
 
 .btn {
 	display:inline-block;
@@ -311,198 +354,4 @@ color:#343434}
 	background:#2e2e2e
 }
 
-/*----- forms -----*/
 
-.box-contact{
-	background:#fff;
-width:940px;
-margin:60px auto 0;
-padding:0 40px 51px;
-background:#fff;
-    border-radius:18px;
-	-moz-border-radius:18px;
-	-webkit-border-radius:18px;
-	 box-shadow:0 0 3px #c5c2a9;
-	-moz-box-shadow: 0 0 3px #c5c2a9;
-	-webkit-box-shadow:0 0 3px #c5c2a9;
-}
-
-.coll-1,.coll-2{float:left;width:450px;}
-.coll-2{float:right}
-
-
-.box-contact .btn{margin-top:2px}
-#contact-form {
-  position: relative;
-  vertical-align: top;
-  z-index: 1;
-  margin: 0;
-  padding: 0;
-}
-#contact-form fieldset {
-  border: none;
-  padding: 0;
-  width: 100%;
-  overflow: hidden;
-}
-#contact-form label {
-  min-height: 54px;
-  position: relative;
-  margin: 0;
-  overflow: hidden;
-  display: block;
-  float: left;
-  width: 100%;
-}
-#contact-form .message {
-  min-height: 213px;
-  display: block;
-  width: 100%;
-}
-#contact-form input,
-#contact-form textarea {
-  font-family: 'PT Serif Caption', serif;
-  padding: 4px 12px 5px;
-  text-transform:uppercase;
-  margin: 0;
-  font-size:14px;
-  display: block;
-  line-height: 24px !important;
-  color: #343434;
-  background: #e8e7de;
-  outline: none;
-  width: 94%;
-  border: 1px solid #d1cfbd;
-  box-shadow: none;
-  border-radius: 0px;
-  float: left;
-}
-#contact-form input {
-  height: 24px;
-}
-#contact-form textarea { 
-  height: 184px;
-  resize: none;
-  overflow: auto;
-}
-#contact-form textarea:focus,
-#contact-form input[type="text"]:focus {
-  box-shadow: none;
-  
-}
-#contact-form .area .error {
-  float: none;
-}
-#contact-form .success {
-  display: none;
-  margin-bottom: 10px;
-   background: #e8e7de;
-  font-size: 14px;
-  line-height: 16px;
-  position: relative;
-  border: 1px solid #d1cfbd;
-  padding: 10px;
-}
-#contact-form .error,
-#contact-form .empty {
-  color: #f00;
-  font-size: 11px;
-  line-height: 1.27em;
-  display: none;
-  overflow: hidden;
-  margin-bottom: 5px;
-  padding: 2px 4px 6px;
-  float: left;
-}
-
-#contact-form a{cursor:pointer}
-
-
-.form-txt{padding-bottom:2px}
-.btns {overflow:hidden;
-padding-left:370px}
-.btns a{float:left;margin-right:40px}
-/*----- map -----*/
-.map {
-	float:left;
-	margin:0
-}
-iframe {
-	height: 182px;
-	overflow: hidden;
-	width: 630px;
-
-}
-/*----- adress -----*/
-
-.box-address {
-float:left;
-width:260px;
-margin-right:30px;
-padding-top:9px
-}
-
-dl {padding-top:2px
-}
-dt {
-	padding-bottom:5px;
-}
-dd {
-	display:inline-block;
-}
-dl dd span {
-	display: inline-block;
-	width: 94px;
-	}
-.mail-1{
-	color:#d53827;
-	text-decoration:none;
-	
-}
-.mail-1:hover{
-	text-decoration:underline
-}
-
-/*===== footer =====*/
-
-footer {
-	position:relative;
-	padding:31px 0 20px;
-	background:url(../images/tail-bg-footer.gif) repeat-x 0 0;
-	
-}
-.policy {
-	float:right;
-	display:block;
-	font-size:14px;
-	color:#343434;
-	line-height:16px;
-	text-decoration:none;
-	padding:8px 90px 0 0;
-}
-
-.policy a {
-	color:#d53827;
-	text-decoration:none;	
-	
-	
-}
-.policy a:hover {
-	text-decoration:underline;
-}
-
-/*----- social -----*/
-.soc-list {float:left;	
-	display:block;
-	padding-left:73px
-}
-.soc-list li {
-	padding:0 5px 0 0;
-	float:left;
-}
-.soc-list li a {
-	display:block;
-	opacity:1;
-	background:url(../images/bg-body.gif);
-}
-.soc-list li a:hover{opacity:0.7}

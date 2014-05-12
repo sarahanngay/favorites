@@ -1,22 +1,15 @@
 var favorites = angular.module('favorites', []);
 
 function mainController($scope, $http) {
-  $scope.formData = {};
-
-  $scope.logText = function() {
-    $http.get('/list')
+  $scope.list = $http.get('/list')
         .success(function(data) {
-          var retval = '';
-          for (var i = data.length - 1; i >= 0; i--) {
-            retval =+ 'tr';
-          };
-          $scope.list = retval;
+          $scope.list = data;
+          console.log(data)
         })
         .error(function(error) {
           if (error) {
             console.log(error);
           }
         })
-  };
 
 }
