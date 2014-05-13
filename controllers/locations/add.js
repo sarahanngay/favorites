@@ -63,20 +63,16 @@ function add (req, res, next) {
       return callback(null, previous);
     } else {
       var geo_string = addr_obj.line[0] + ' ' 
-                       + addr_obj.city + ', ' 
-                       + addr_obj.state + ' ' 
-                       + addr_obj.country;
+                       + addr_obj.city;
 
       // try to geocode the address given
       geocoder.geocode(geo_string, function(error, result) {
-
         // if there was an error, return the error message
         if (error) {
           previous.message = error;
           previous.error = true;
           return callback(null, previous);
         } else {
-
           var obj = result.results[0]
             , lat = null
             , lng = null;
