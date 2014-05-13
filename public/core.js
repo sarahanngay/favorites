@@ -82,7 +82,7 @@ function mainController($scope, $http, $window) {
           if(typeof alert_txt === 'object') {
             alert_txt = data.message;
           }
-
+          
           alert(alert_txt);
 
           // reset the scope list

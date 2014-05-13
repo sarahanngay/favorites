@@ -76,7 +76,7 @@ function add (req, res, next) {
           var obj = result.results[0]
             , lat = null
             , lng = null;
-            
+            console.log(obj.geometry)
           // if we have an object, grab the lat/long
           if (obj) {
             obj = obj.geometry;
@@ -131,10 +131,12 @@ function add (req, res, next) {
     if (previous.error) {
       return callback(null, previous);
     } else {
-
       // create a new address object
       var Address = new AddressModel(addr_obj);
 
+      req.body.latitude = addr_obj.latitude;
+      req.body.longitude = addr_obj.longitude;
+      
       // save the address
       AddressModel.findByIdAndUpdate(req.body.id, req.body, function (error, results) {
         // if there was an error, return the error message
