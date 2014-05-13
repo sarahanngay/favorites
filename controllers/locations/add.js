@@ -63,7 +63,8 @@ function add (req, res, next) {
       return callback(null, previous);
     } else {
       var geo_string = addr_obj.line[0] + ' ' 
-                       + addr_obj.city;
+                       + addr_obj.city + ', '
+                       + addr_obj.state;
 
       // try to geocode the address given
       geocoder.geocode(geo_string, function(error, result) {
@@ -136,7 +137,7 @@ function add (req, res, next) {
 
       req.body.latitude = addr_obj.latitude;
       req.body.longitude = addr_obj.longitude;
-      
+
       // save the address
       AddressModel.findByIdAndUpdate(req.body.id, req.body, function (error, results) {
         // if there was an error, return the error message
