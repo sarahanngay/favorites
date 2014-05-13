@@ -3,21 +3,27 @@ var favorites = angular.module('favorites', []);
 function mainController($scope, $http, $window) {
 
 
-  $scope.list = $http.get('/list')
-        .success(function(data) {
-          $scope.list = data;
-        })
-        .error(function(error) {
-          if (error) {
-            console.log(error);
-          }
-        })
+  $scope.list = []; 
+
+    $scope.getList = function() {
+      $http.get('/list')
+              .success(function(data) {
+                $scope.list = data;
+              })
+              .error(function(error) {
+                if (error) {
+                  console.log(error);
+                }
+              })      
+    }
+
+    $scope.getList();
 
     $scope.remove = function(id) {
       $http.delete('/location/' + id)
           .success(function(data) {
             alert(data);
-            $window.location.reload();
+            $scope.list = $scope.getList();
           })
           .error(function(error) {
             alert(error);
@@ -25,7 +31,34 @@ function mainController($scope, $http, $window) {
     } 
 
     $scope.update = function(address) {
-      console.log(address);
+      address = address || {};
+      
+      var updated = {
+        name: address.name,
+        id: address._id,
+        line: address.line,
+        city: address.city,
+        state: address.state,
+        zip: address.zip,
+        country: address.country
+      };
+
+      console.log(updated)
+
+      $http.put('/', updated)
+          .success(function(data) {
+            var alert_txt = data;
+            if(typeof alert_txt === 'object') {
+              alert_txt = "Required inputs are missing";
+            }
+
+            alert(alert_txt);
+            
+            $scope.list = $scope.getList();
+          })
+          .error(function(error) {
+            alert(error);
+          })
     }
 
     $scope.add = function(address) {
@@ -43,7 +76,7 @@ function mainController($scope, $http, $window) {
       $http.post('/', address)
           .success(function(data) {
             alert(data);
-            $window.location.reload();
+            $scope.list = $scope.getList();
           })
           .error(function(data) {
             var retval = data;
@@ -54,5 +87,4 @@ function mainController($scope, $http, $window) {
             alert(retval);
           })
     }
-
 }

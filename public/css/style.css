@@ -1,164 +1,63 @@
-/* Getting the new tags to behave */
-article, aside, audio, canvas, command, datalist, details, embed, figcaption, figure, footer, header, hgroup, keygen, meter, nav, output, progress, section, source, video {
-	display: block;
-}
-mark, rp, rt, ruby, summary, time {
-	display: inline
-}
-/* Global properties ======================================================== */
-
-label{
-    display: inline-block;
-    float: left;
-    clear: left;
-    width: 75px;
-    text-align: left;
-}
-input {
-  display: inline-block;
-  width: 250px;
-  float: left;
-}
-
 body {	
 	font-family: 'PT Serif Caption', serif;
 	font-size:14px;
-	line-height:24px;
 	color:#343434;
-	min-width:1020px;
 	background:url(../images/bg-body.gif) #e6e4d7;
 	text-transform:uppercase;
 }
-html, body {
-	height:100%;
-}
-.ic {
-	border:0;
-	float:right;
-	background:#fff;
-	color:#f00;
-	width:50%;
-	line-height:10px;
-	font-size:10px;
-	margin:-220% 0 0 0;
-	padding:0;
-	overflow:hidden
-}
-p {
-	padding-bottom:18px;
 
+ul { 
+	list-style: none; 
+	position: relative; 
+	display: block; 
+	text-align: center;
 }
 
 
-a {
+ul li {
+	display:inline-block;
+}
+
+button {
+	display:inline-block;
 	color:#fff;
-	text-decoration:none;
-}
-h1 {
-	float:left;
-	display:block;
-	position:relative;
-	z-index:10;
-}
-
-h1 a {
-	display:block;
+	padding:8px 16px;
+	background:#db3222;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+    box-shadow:0 1px 2px #c5c2a9;
+	-moz-box-shadow: 0 1px 2px #c5c2a9;
+	-webkit-box-shadow:0 1px 2px #c5c2a9;
 }
 
-h2,h3,h4,h5,h6{
-font-family: 'PT Serif Caption', serif;
-font-weight:normal;
-color:#343434} 
+
+label {
+    display: inline-block;
+    width: 80px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+input {
+  display: inline-block;
+  padding-right: 10px;
+  width: 300px;
+}
+
 h3 {	
+	text-align: center;
 	font-size:35px;
 	line-height:38px;	
 	padding:33px 0 18px;
 	text-shadow:0 1px 2px #c5c2a9;
 	
 }
-h3 span {color:#D53827;
-	display:block;
-	margin-bottom:-9px;}
-h3 strong{font-weight:normal;color:#d53827}	
-h3 em{color:#999;
-font-size:20px;
-line-height:24px;
-display:block;
-font-style:normal}	
-	
-h4 {
-	font-size:20px;
-	line-height:28px;
-	display:block;
-	color:#d53827;}
 
 h5 {
-	color:#fff;
-	font-size:15px;
+	text-align: center;
+	font-size:20px;
 	line-height:18px;
 	padding:0 0 8px 0;
-	font-weight:normal;
 }
-h6 {
-	color:#2d2f38;
-	font-size:20px;
-	line-height:20px;
-	padding:0 0 19px 0;
-	font-weight:bold;
-}
-
-.padd-1{padding-top:11px}
-.padd-2{padding-top:15px}
-.inner-1{padding-right:35px}
-
-.relative {
-	position:relative
-}
-
-/*----- btns -----*/
-.wrapper {
-    text-align: center;
-	padding-bottom: 50px;    
-}
-
-.wrapper-add {
-    text-align: center;
-    vertical-align: center;
-	padding-bottom: 50px;    
-}
-.add-btn {
-	display:inline-block;
-	color:#fff;
-	padding:8px 16px;
-	background:#db3222;
-	-webkit-transition: all 0.3s ease;
-	-moz-transition: all 0.3s ease;
-	-o-transition: all 0.3s ease;
-	transition: all 0.3s ease;
-    box-shadow:0 1px 2px #c5c2a9;
-	-moz-box-shadow: 0 1px 2px #c5c2a9;
-	-webkit-box-shadow:0 1px 2px #c5c2a9;
-	vertical-align: center;
-	width: 300px;  
-	height: 50px;
-}
-
-
-.btn {
-	display:inline-block;
-	color:#fff;
-	padding:8px 16px;
-	background:#db3222;
-	-webkit-transition: all 0.3s ease;
-	-moz-transition: all 0.3s ease;
-	-o-transition: all 0.3s ease;
-	transition: all 0.3s ease;
-    box-shadow:0 1px 2px #c5c2a9;
-	-moz-box-shadow: 0 1px 2px #c5c2a9;
-	-webkit-box-shadow:0 1px 2px #c5c2a9;
-}
-.btn:hover {
-	background:#2e2e2e
-}
-
-

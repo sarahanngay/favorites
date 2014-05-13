@@ -135,7 +135,7 @@ function add (req, res, next) {
     if (previous.error) {
       return callback(null, previous);
     } else {
-      console.log(addr_obj)
+
       // create a new address object
       var Address = new AddressModel(addr_obj);
 
