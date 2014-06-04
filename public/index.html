@@ -3,73 +3,75 @@
 <head>
 	<title>Locations</title>
 	<meta charset="utf-8">
-	<!--css-->
-	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
 	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/0.10.0/lodash.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">	
 </head>
 
 <body ng-controller="mainController">
 	<h3>Favorite Locations</h3>
 	<h5>Add a new Location</h5>
 	<ul>
-		<li class="wrapper-add">
-			<form class="location-form" name="locationForm">
-				<label>Title:</label>
-				<input type="text" ng-model="new_address.name" name="name"/>
+		<li class="wrapper-add" class="jumbotron">
+			<form class="location-form form-inline" name="locationForm">
+				<label class="control-group">Title:</label>
+				<input class="form-control" type="text" ng-model="new_address.name" name="name"/>
 				<br/>
 				<label>Line1:</label>
-				<input type="text" ng-model="new_address.line1" name="line1"/>
+				<input class="form-control" type="text" ng-model="new_address.line1" name="line1"/>
 				<br/>
 				<label>Line2:</label>
-				<input type="text" ng-model="new_address.line2" name="line2"/>
+				<input class="form-control" type="text" ng-model="new_address.line2" name="line2"/>
 				<br/>
 				<label>City:</label>
-				<input type="text" ng-model="new_address.city" name="city"/>
+				<input class="form-control" type="text" ng-model="new_address.city" name="city"/>
 				<br/>
 				<label>State:</label>
-				<input type="text" ng-model="new_address.state" name="state">
+				<input class="form-control" type="text" ng-model="new_address.state" name="state">
 				<br/>
 				<label>Zip:</label>
-				<input type="text" ng-model="new_address.zip" name="zip" ng-minlength="5" ng-maxlength="5"/>
+				<input class="form-control" type="text" ng-model="new_address.zip" name="zip" ng-minlength="5" ng-maxlength="5"/>
 				<br/>
 				<label>Country:</label>
-				<input type="text" ng-model="new_address.country" name="country"/>
+				<input class="form-control" type="text" ng-model="new_address.country" name="country"/>
 				<br/>			
 			</form>		
-			<button class="add-btn" ng-click="add(new_address)">Add a new location</button>
+			<button class="btn btn-lg btn-primary btn-sm" ng-click="add(new_address)">Add a new location</button>
 		</li>
 	</ul>	
 
-	<h5>Current Locations</h5>
+<!-- 	<h5>Current Locations</h5>
 	<ul class="list-dropcap1">
 		<li ng-repeat="location in list">
-			<form class="location-form" name="locationForm">
+			<form class="location-form form-inline" name="locationForm">
 				<label>Title:</label>
-				<input type="text" ng-model="list[$index].name" name="name"/>
+				<input class="form-control" type="text" ng-model="list[$index].name" name="name"/>
 				<br/>
 				<label>Line1:</label>
-				<input type="text" ng-model="list[$index].line[0]"/>
+				<input class="form-control" type="text" ng-model="list[$index].line[0]"/>
 				<br/>
 				<label>Line2:</label>
-				<input type="text" ng-model="list[$index].line[1]"/>
+				<input class="form-control" type="text" ng-model="list[$index].line[1]"/>
 				<br/>
 				<label>City:</label>
-				<input type="text" ng-model="list[$index].city"/>
+				<input class="form-control" type="text" ng-model="list[$index].city"/>
 				<br/>
 				<label>State:</label>
-				<input type="text" ng-model="list[$index].state"/>
+				<input class="form-control" type="text" ng-model="list[$index].state"/>
 				<br/>
 				<label>Zip:</label>
-				<input type="text" ng-model="list[$index].zip"/>
+				<input class="form-control" type="text" ng-model="list[$index].zip"/>
 				<br/>
 				<label>Country:</label>
-				<input type="text" ng-model="list[$index].country"/>
+				<input class="form-control" type="text" ng-model="list[$index].country"/>
 				<br/>	
-				<button class="btn" ng-click="update(list[$index])">update</button>				
-				<button class="btn" ng-click="remove(location._id)">delete</button>
+				<button class="btn btn-lg btn-primary" ng-click="update(list[$index])">update</button>				
+				<button class="btn btn-lg btn-primary" ng-click="remove(location._id)">delete</button>
 			</form>
 		</li>
-	</ul>
+	</ul> -->
 
 <google-map id="map" center="map.center" zoom="map.zoom" draggable="true">
 	<marker ng-repeat="m in markers" coords="m"></marker>
